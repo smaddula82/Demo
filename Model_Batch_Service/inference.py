@@ -16,6 +16,7 @@ import pandas as pd
 from joblib import load
 from sklearn import preprocessing
 from sklearn.metrics import classification_report
+from sklearn.ensemble import GradientBoostingClassifier
 
 
 
@@ -64,6 +65,16 @@ def inference():
     print('NN Prediction:', prediction_nn)
     print('NN Classification Report:', report_nn)
     
+    # Run model
+    clf_gbc = load(MODEL_PATH_GBC)
+    print("NN score and classification:")
+    prediction_gbc = clf_gbc.predict(X_test)
+    report_gbc = classification_report(y_test, prediction_gbc)
+
+
+    print(clf_gbc.score(X_test, y_test))
+    print('GBC Prediction:', prediction_gbc)
+    print('GBC Classification Report:', report_gbc)
     
 if __name__ == '__main__':
     inference()

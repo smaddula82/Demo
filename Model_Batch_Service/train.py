@@ -14,6 +14,7 @@ from sklearn.neural_network import MLPClassifier
 import pandas as pd
 from joblib import dump
 from sklearn import preprocessing
+from sklearn.ensemble import GradientBoostingClassifier
 
 def train():
 
@@ -22,6 +23,7 @@ def train():
     MODEL_DIR = '/Volumes/GL/TECH/IIITH/TA_Session_Material/Material/EEG-letters-main'
     MODEL_PATH_LDA = 'lda.joblib'
     MODEL_PATH_NN = 'nn.joblib'
+    MODEL_PATH_GBC = 'gbc.joblib'
       
     # Load, read and normalize training data
     training = "./train.csv"
@@ -52,8 +54,17 @@ def train():
     clf_NN.fit(X_train, y_train)
        
     # Secord model
-    from joblib import dump, load
+    
     dump(clf_NN, MODEL_PATH_NN)
+
+    #Gradient Boosting Classifier(Default Parameters)
+
+    clf_gbc = GradientBoostingClassifier()
+    clf_gbc.fit(X_train,y_train)
+
+    # Third model
+    
+    dump(clf_gbc, MODEL_PATH_GBC)
         
 if __name__ == '__main__':
     train()
