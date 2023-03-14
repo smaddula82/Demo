@@ -22,7 +22,7 @@ from sklearn.ensemble import GradientBoostingClassifier
 
 def inference():
 
-    MODEL_DIR = '/Volumes/GL/TECH/IIITH/TA_Session_Material/Material/EEG-letters-main'
+    #MODEL_DIR = '/Volumes/GL/TECH/IIITH/TA_Session_Material/Material/EEG-letters-main'
     MODEL_PATH_LDA = 'lda.joblib'
     MODEL_PATH_NN = 'nn.joblib'
     MODEL_PATH_GBC = 'gbc.joblib'
