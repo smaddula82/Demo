@@ -68,7 +68,7 @@ def inference():
     
     # Run model
     clf_gbc = load(MODEL_PATH_GBC)
-    print("NN score and classification:")
+    print("GBC score and classification:")
     prediction_gbc = clf_gbc.predict(X_test)
     report_gbc = classification_report(y_test, prediction_gbc)
 
